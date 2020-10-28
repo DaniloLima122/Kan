@@ -1,0 +1,106 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<MeuProjeto.Models.Card>
+
+
+@{
+    ViewData["Title"] = "My tasks";
+}
+
+<link rel="stylesheet" href="~/css/dashboard.css" />
+<link rel="stylesheet" href="~/css/loginCad.css" />
+
+<script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+
+<script defer src="~/js/dash.js" ></script>
+
+
+<div class="dashboard_container">
+
+<div id="messageDialog">
+    <span>message</span>
+</div>
+
+    <section>
+        <header>
+            <div>
+                <h1>Olá <span>@User.FindFirst("fullName").Value,</span>seja bem vindo(a)!</h1>
+            </div>
+            <div class="btns_e_search">
+                
+                <div class="buttons-select">
+
+                    <label for="ToDo" id="labelToDo">
+                        <input type="radio" name="tasks"  id="ToDo" checked>
+                        <span id="tasksToDo">To Do</span>
+                    </label>
+                    <label for="Done" >
+                        <input type="radio" name="tasks"  id="Done">
+                        <span id="tasksDone">Done</span>
+                    </label>
+
+                </div>
+
+                <div class="input-search">
+                    <input type="text" id="inputSearch" required>
+                    <button id="btnsearch"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <h3>Tarefas pendentes</h3>
+
+        <div class="form" id="modal">
+            
+            <div class="container_add_form form">
+                
+                    <form id="formAddCard">
+                        <h4>New Task</h4>
+                        <hr />
+                            <div>
+                                <label>Task name</label>
+                                <input id="taskname" name="name" required/>
+                            </div>
+                        <div>
+                            <label>Task Description</label>
+                            <textarea id="taskdesc" name="description" required ></textarea>
+                        </div>
+                        <div>                                                                       
+                            <label>Data</label>
+                            <input id="tasktime" name="data" type="date" required/>
+                        </div>
+
+                        <input type="hidden" name="userId" id="userId" value="@UserManager.GetUserId(User)">
+                        
+                        <button type="submit" id="saveNewCard">Save</button>
+                        <button type="submit" id="editCard">Save Changes</button>
+                        </form>
+                </div>
+        </div>
+
+        <main>
+
+            <button class="addCard" id="addnCard"><span>+</span></button>
+
+
+                <div class="cards-container">
+                    <div class="inner-cards">
+                    
+
+                    </div>
+                </div>
+                
+        </main>
+
+    </section>
+
+    
+                    <footer class="scroll-btns">
+                        <button id="prev"><</button>
+                        <button id="next">></button>
+                    </footer>
+
+
+
+</div>

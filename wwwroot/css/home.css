@@ -1,0 +1,178 @@
+﻿*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  font-family: sans-serif;
+}
+
+button{
+  cursor: pointer;
+}
+
+p{
+  cursor: context-menu;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+}
+
+a{
+  text-decoration: none;
+}
+
+body {
+  /* background: url("../assets/bg.jpg") */
+  background-color: #1c2331;
+  background-size: cover;  
+  height: 100vh;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 2rem 5rem;
+}
+
+nav  img{
+  width: 100%;
+  max-width: 150px;
+}
+
+nav .container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .container a{
+  color: #fff;
+}
+
+nav .container ul li{
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.text-center{
+  height: 85vh;
+  display: grid;
+  place-content: center;
+}
+
+.text-center h1{
+
+  color: #fff;
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin: 2rem auto;
+  transform: translateY(50px);
+  animation: animatitle 1s ease forwards;
+  animation-delay: .5s;
+  opacity: 0;
+  text-align: center;
+}
+
+@keyframes animatitle{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-center div{
+  
+  color: #fff;
+  text-transform: uppercase;
+  margin: 4rem auto;
+  opacity: 0;
+  animation: animabtns 1s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes animabtns{
+  to{
+    opacity: 1;
+  }
+}
+
+
+.text-center a{
+
+  color: #fff;
+  
+  height: 50px;
+  margin: 0 1rem;
+  padding: .8rem 1.2rem;
+  border-radius: 5px;
+}
+
+.text-center a:first-child{
+  
+  background: #2f3847;
+  transition: .5s;
+}
+
+.text-center a:first-child:hover{
+  background: #475368;
+}
+
+.text-center a:last-child{
+  
+  background: #673ab7;
+  padding: .8rem 2.2rem;
+  transition: .5s;
+  
+}
+
+.text-center p{
+  color: #5f6c83;
+  text-align: center;
+  font-size: 19px;
+  margin: 20px 0;
+}
+
+.right-header-items{
+  display: flex;
+  align-items: center;
+}
+
+.right-header-items a{
+  color: #fff;
+}
+
+.right-header-items button{
+  background: #673ab7;
+  color: #fff;
+  height: 40px;
+  width: 80px;
+  margin: 0 0 0 1rem;
+  font-weight: 600;
+  transition: .5s;
+  border-radius: 5px;
+}
+
+#logout{
+  width: 90px;
+  height: 40px;
+  background: #673ab7;
+}
+
+
+button:hover,.text-center a:last-child:hover,#logout:hover{
+  background: #7e50ce;
+}
+
+
+
+@media (max-width: 864px){
+  .right-header-items li:first-child{
+    display: none;
+}
+}

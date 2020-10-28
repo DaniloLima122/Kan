@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "KAN";
+}
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+<div class="text-center">
+    @if(SignInManager.IsSignedIn(User)){
+
+         <h1>Olá @User.FindFirst("fullName").Value</h1>
+         <p>Pronto para gerenciar suas tarefas?</p>   
+    }else{
+        
+         <h1>Bora gerenciar as tarefas?</h1>
+         <p></p>   
+    }
+
+    <div>
+        @if(SignInManager.IsSignedIn(User)){
+
+
+             <a class="nav-link text-dark" asp-controller="Dashboard">Gerenciar minhas tarefas</a>
+
+        }else{
+
+             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Cadastrar</a>
+             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Entrar</a>
+        }
+    </div>
+
+</div>

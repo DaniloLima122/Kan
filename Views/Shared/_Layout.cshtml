@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager;
+
+@{
+    ViewData["Title"] = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="pt-br">
+    @{
+        if(SignInManager.IsSignedIn(User)){
+
+            ViewData["Title"] = "My Tasks - " + @User.FindFirst("fullName").Value;
+        }else{
+                ViewData["Title"] = "KAN - Home";
+        }
+    }
+
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/home.css" />
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body>
+    <header id="Mmenu">
+
+
+        <nav>
+            <div>
+
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/assets/logo.svg">
+                </a>
+            </div>
+
+            <partial name="_LoginPartial.cshtml" >
+        </nav>
+    </header>
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
