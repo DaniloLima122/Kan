@@ -32,6 +32,7 @@
 ## Tecnologias
 
 - ASP.NET CORE
+- Entity Framework
 - HTML5
 - CSS3
 - JAVASCRIPT
@@ -56,7 +57,17 @@ dotnet restore
 
 4º - Abra a pasta que você clonou no seu editor de preferência
 
-5º - Agora é só digitar o comando abaixo e depois digitar a url que irá aparecer no seu terminal na barra de pesquisa do navegador:
+5º - Com o MySql instalado, crie um banco de dados e renomeie a string de conexao JSON na raiz do projeto com o nome do banco e suas credenciais
+
+6º - Certifique se de que você tem o gerenciador de pacotes NuGet na sua máquina e instale o EF Core
+
+6º Após isto rode as migrations para criar as tabelas no banco
+
+~~~shell
+dotnet ef database update
+~~~
+
+7º - Agora é só digitar o comando abaixo e depois digitar a url que irá aparecer no seu terminal na barra de pesquisa do navegador:
 ~~~shell
 dotnet watch run
 ~~~
