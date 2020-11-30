@@ -61,13 +61,13 @@ dotnet restore
 
 6º - Certifique se de que você tem o gerenciador de pacotes NuGet na sua máquina e instale o EF Core
 
-6º Após isto rode as migrations para criar as tabelas no banco
+7º Após isto rode as migrations para criar as tabelas no banco
 
 ~~~shell
 dotnet ef database update
 ~~~
 
-7º - Agora é só digitar o comando abaixo e depois digitar a url que irá aparecer no seu terminal na barra de pesquisa do navegador:
+8º - Agora é só digitar o comando abaixo e depois digitar a url que irá aparecer no seu terminal na barra de pesquisa do navegador:
 ~~~shell
 dotnet watch run
 ~~~
